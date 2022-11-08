@@ -5,7 +5,7 @@ Voir la classe [HelloRestController.java](src/main/java/com/oxiane/springhellowo
 
 ## Lancement
 
-Ce dépôt embarque le [Maven Wrapper](https://maven.apache.org/wrapper/) : sur un JDK 11+ est nécéssaire pour compiler et lancer l'application.
+Ce dépôt embarque le [Maven Wrapper](https://maven.apache.org/wrapper/) : seul un JDK 11+ est nécéssaire pour compiler et lancer l'application.
 
 ### Méthode 1 : Lancement simple via le Spring-Boot-Maven-Plugin :
 ````
