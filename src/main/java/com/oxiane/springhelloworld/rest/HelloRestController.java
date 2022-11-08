@@ -1,12 +1,21 @@
 package com.oxiane.springhelloworld.rest;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloRestController {
     
-    public static final String HELLO = "Salut, le monde !";
+    @Value(value = "${salutation}")
+    public String salutation;
+
+    /**
+     * @return la valeur de la salution
+     */
+    String getSalutation(){
+        return this.salutation;
+    }
 
     /**
      * Retourne la salutation en texte brut.
@@ -14,7 +23,7 @@ public class HelloRestController {
      */
     @GetMapping(path = "/", produces = "application/json")
     public String hello(){
-        return HELLO;
+        return getSalutation();
     }
 
     /**
@@ -24,8 +33,8 @@ public class HelloRestController {
     @GetMapping(path = "/", produces = "text/html")
     public String helloHtml(){
         return "<!DOCTYPE html>"
-          + "<head><title>" + HELLO + "</title></head>"
-          + "<body><h1>" + HELLO + "</h1></body>"
+          + "<head><title>" + getSalutation() + "</title></head>"
+          + "<body><h1>" + getSalutation() + "</h1></body>"
           + "</html>";
     }
 }

@@ -22,3 +22,9 @@ Ce dépôt embarque le [Maven Wrapper](https://maven.apache.org/wrapper/) : seul
 
 ![capture d'écran](screenshot.png)
 
+## Redéfinition de la *System property* au *runtime*
+
+````
+java -jar target/*.jar '--salutation=Yo !'
+````
+
